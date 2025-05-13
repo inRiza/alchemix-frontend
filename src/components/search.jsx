@@ -43,7 +43,7 @@ const Search = () => {
     setSelectedRecipeIndex(0);
 
     try {
-      const url = process.env.NODE_ENV == 'production' ? new URL(`http://35.202.0.220:5000/search`) : new URL('http://localhost:5000/search');
+      const url = new URL(`${process.env.NEXT_PUBLIC_API_URL}/search`);
       url.searchParams.append('element', searchElement);
       url.searchParams.append('mode', searchMode);
       url.searchParams.append('recipe_mode', recipeMode);
