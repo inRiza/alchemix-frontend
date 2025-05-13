@@ -43,8 +43,11 @@ const Search = () => {
     setSelectedRecipeIndex(0);
 
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://alchemix-backend-production.up.railway.app';
+      console.log('Environment:', process.env.NODE_ENV);
       console.log('API URL:', apiUrl);
+      console.log('All env vars:', process.env);
+      
       const url = new URL(`${apiUrl}/search`);
       console.log('Full URL:', url.toString());
       url.searchParams.append('element', searchElement);
