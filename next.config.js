@@ -6,7 +6,14 @@ const nextConfig = {
   output: 'standalone',
   distDir: '.next',
   trailingSlash: false,
-  reactStrictMode: true
+  reactStrictMode: true,
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader', 'postcss-loader'],
+    });
+    return config;
+  }
 }
 
 module.exports = nextConfig 
