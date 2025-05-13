@@ -50,7 +50,7 @@ const ThreeDElement = () => (
 );
 
 // Dynamically import components with no SSR
-const Search = dynamic(() => import('../../components/Search'), {
+const Search = dynamic(() => import('../../components/search'), {
   ssr: false,
   loading: () => (
     <div className="w-full h-[600px] relative glass rounded-2xl shadow-xl overflow-hidden flex items-center justify-center">
