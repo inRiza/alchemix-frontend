@@ -43,7 +43,10 @@ const Search = () => {
     setSelectedRecipeIndex(0);
 
     try {
-      const url = new URL(`${process.env.NEXT_PUBLIC_API_URL}/search`);
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+      console.log('API URL:', apiUrl);
+      const url = new URL(`${apiUrl}/search`);
+      console.log('Full URL:', url.toString());
       url.searchParams.append('element', searchElement);
       url.searchParams.append('mode', searchMode);
       url.searchParams.append('recipe_mode', recipeMode);
